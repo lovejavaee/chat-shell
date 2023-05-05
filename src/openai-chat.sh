@@ -19,8 +19,13 @@ send_message() {
         "messages": [{"role": "user", "content": "'"${input}"'"}]
     }'
     local resp=$(curl -s -H "${headers[0]}" -H "${headers[1]}" -d "${data}" "${endpoint}")
-    local choices=($(echo "${resp}" | jq -r '.choices[].text'))
-    printf "%s\n" "${choices[@]}"
+    # Checks whether the variable "message" is empty or not
+    local message=($(echo "${resp}" | jq -r '.choices[].message.content'))
+    if [[ -z "${message}" ]]; then
+        printf "Error: No response from GPT-3.5 Turbo model.\n"
+        return 1
+    fi
+    printf "%s" "${message}"
 }
 
 # Start the chat loop
