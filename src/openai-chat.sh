@@ -38,3 +38,39 @@ while true; do
     response=$(send_message "${input}")
     printf "ChatGPT>: %s\n" "${response}"
 done
+
+# Previous chat history
+CHAT_HISTORY=()
+
+while true; do
+    # Read user input with readline
+    read -e chat_message
+    
+    # Add message to chat history
+    CHAT_HISTORY+=("$chat_message")
+    
+    # If user presses ctrl+n, go to next message in history
+    if [[ "$chat_message" == $'\C-n' ]]; then
+        if (( ${#CHAT_HISTORY[@]} > 0 )); then
+            # Remove last message from history (current message)
+            unset 'CHAT_HISTORY[${#CHAT_HISTORY[@]}-1]'
+            # Print next message from history
+            echo "${CHAT_HISTORY[${#CHAT_HISTORY[@]}-1]}"
+        fi
+        continue
+    fi
+    
+    # If user presses ctrl+p, go to previous message in history
+    if [[ "$chat_message" == $'\C-p' ]]; then
+        if (( ${#CHAT_HISTORY[@]} > 1 )); then
+            # Remove last message from history (current message)
+            unset 'CHAT_HISTORY[${#CHAT_HISTORY[@]}-1]'
+            # Print previous message from history
+            echo "${CHAT_HISTORY[${#CHAT_HISTORY[@]}-1]}"
+        fi
+        continue
+    fi
+    
+    # Otherwise, display the message
+    echo "You said: $chat_message"
+done
