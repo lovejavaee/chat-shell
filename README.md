@@ -1,4 +1,4 @@
-# Demo Project
+# OpenAI API Demo
 
 This is a demo project showcasing how to use the OpenAI API with a bash script.
 
