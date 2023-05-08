@@ -20,9 +20,14 @@ This is a demo project showcasing how to use the OpenAI API with a bash script.
 ## Dependencies
 
 - `curl` - command line tool for transferring data
-- `jq` - command line JSON processor
+## Dependencies
+
+To run the application in a Docker container, you will need to have Docker installed on your system. Please see the [Docker documentation](https://docs.docker.com/get-docker/) for instructions on how to install Docker.
 
 ## Contributing
+
+If you find a bug or have an idea for a new feature, feel free to open an issue or submit a pull request!
+
 
 If you find a bug or have an idea for a new feature, feel free to open an issue or submit a pull request!
 
