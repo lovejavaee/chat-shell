@@ -18,9 +18,17 @@ This is a demo project showcasing how to use the OpenAI API with a bash script.
 4. To exit the chat loop, type `q` and press Enter.
 
 ## Dependencies
-
 - `curl` - command line tool for transferring data
 - `jq` - command line JSON processor
+
+## Docker instructions
+
+- Save the Dockerfile in your project directory.
+- Open a terminal and navigate to your project directory.
+- Build the Docker image by running the command: docker build -t chatgpt . (Note the "." at the end which indicates to use the current directory as the build context).
+- Run the container with the command: docker run -p 5000:5000 chatgpt (This will map port 5000 in the container to port 5000 on your host machine so you can access the application at http://localhost:5000).
+- Use the application by typing in messages and receiving the AI-generated responses.
+
 
 ## Contributing
 
