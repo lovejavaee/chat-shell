@@ -1,21 +1,37 @@
-### This is a Python script that uses the OpenAI API to perform text-based chat with the GPT-3.5 Turbo language model. The script sends a message as input to the API and receives a response message from the API.
+{
+    "outcome": "Successfully rewrote hunk."
+}
+{
+    "outcome": "Successfully rewrote hunk."
+}
+2. Run the Docker container:
 
-Requirements
-To use this script, you need to have an OpenAI API key. You can sign up for an API key at [https://platform.openai.com/signup/](https://platform.openai.com/signup/).
+To run the application in a Docker container, follow these steps:
 
-You also need to have the 
-requests and json Python modules installed. You can install these modules using pip:
+1. Build the Docker image using the following command:
 
-```python
-pip install requests
-pip install json
+```bash
+docker build -t my-app .
 ```
 
-How to Use
-To use the script, run it in a Python environment that has access to your OpenAI API key. You can set your API key in an environment variable called 
-OPENAI_API_KEY.
+2. After the image has been built successfully, run the Docker container using the following command:
 
-When you run the script, you will see a prompt asking you to type your message. Type your message and press Enter to send it to the API. The script will then display the response message from the API.
+```bash
+docker run -e "OPENAI_API_KEY=<your-api-key>" my-app
+```
+
+When you run the container, the application will run inside the container. 
+
+Disclaimer:
+This script is for educational purposes only and should not be used for any other purpose. The use of the OpenAI API is subject to the OpenAI API Terms of Service.
+When you run the container, the script will run inside the container and display the response message from the API. The script keeps track of the chat history, which is stored in the CHAT_HISTORY list.
+
+Disclaimer:
+
+This script is for educational purposes only and should not be used for any other purpose. The use of the OpenAI API is subject to the OpenAI API Terms of Service.
+Disclaimer:
+
+This script is for educational purposes only and should not be used for any other purpose. The use of the OpenAI API is subject to the OpenAI API Terms of Service.
 
 The script keeps track of the chat history, which is stored in the CHAT_HISTORY list.
 
